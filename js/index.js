@@ -13,7 +13,7 @@ function cargarPagina() {
 
         guardarEnLocalStorage('nombreUsuario', nombreUsuario);
         guardarEnLocalStorage('dificultad', dificultad);
-        window.location.href = 'modoFacil.html';
+        window.location.href = 'aplastaElTopo.html';
     });
 }
 
