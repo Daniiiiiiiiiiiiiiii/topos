@@ -50,7 +50,12 @@ body {
     width: 200px;
     display: flex;
     justify-content: center;
-    align-items:flex-end
+    align-items:flex-end;
+    cursor: url("../imgs/Martillo.png"),auto;
+}
+
+.agujero:active{
+    cursor: url("../imgs/MartilloGolpe.png"),auto;
 }
 
 #cesped {
