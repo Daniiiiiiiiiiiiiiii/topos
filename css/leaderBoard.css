@@ -1,0 +1,126 @@
+* {
+    font-family: "Press Start 2P";
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://i.pinimg.com/originals/27/b1/c4/27b1c4179a1bc3d819958cd920030740.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    margin-top: 5vh;
+    font-size: 2em;
+    animation: alternar 1s infinite;
+}
+
+@keyframes alternar {
+    0% {
+        color: red;
+    }
+
+    50% {
+        color: white;
+    }
+
+    100% {
+        color: red;
+    }
+}
+
+#container {
+    width: 100vh;
+    display: flex;
+    justify-content: space-around;
+    gap: 5vh;
+}
+
+.marcador {
+    height: 60vh;
+    width: 33%;
+    border:3px solid green;
+    background-color: whitesmoke;
+    border-radius: 8px;
+    padding: 30px;
+}
+
+#dificultad::before {
+    content: "Dificultad:";
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#cesped {
+    height: 10vh;
+    width: 100%;
+    background-image: url(https://abrakadabra.fun/uploads/posts/2021-12/thumbs/1639895905_37-abrakadabra-fun-p-zemlya-piksel-art-40.png);
+}
+
+#topoMoviendose {
+    z-index: 99;
+    position: relative;
+    left: -800px;
+    top: 3vh;
+    height: 100px;
+    width: 100px;
+    animation: moverse 4s infinite linear,
+        saltitos 0.3s linear infinite both;
+    animation-delay: 2s;
+    transform: scaleX(-1);
+}
+
+@keyframes moverse {
+    from {
+        left: -100%;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes saltitos {
+    0% {
+        transform: translate(0) scaleX(-1);
+    }
+
+    20% {
+        transform: translate(-2px, 2px) scaleX(-1);
+    }
+
+    40% {
+        transform: translate(-2px, -2px) scaleX(-1);
+    }
+
+    60% {
+        transform: translate(2px, 2px) scaleX(-1);
+    }
+
+    80% {
+        transform: translate(2px, -2px) scaleX(-1);
+    }
+
+    100% {
+        transform: translate(0) scaleX(-1);
+    }
+}
+
+@media only screen and (max-width: 900px) {
+
+    #container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .marcador {
+        height: auto;
+        margin-bottom: 10vh;
+    }
+}

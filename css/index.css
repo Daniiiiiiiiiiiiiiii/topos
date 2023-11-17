@@ -1,0 +1,156 @@
+* {
+    font-family: "Press Start 2P";
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url(https://i.pinimg.com/originals/27/b1/c4/27b1c4179a1bc3d819958cd920030740.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+h1 {
+    font-size: 2em;
+    animation: glow 1s infinite;
+}
+
+@keyframes glow {
+    0% {
+        color: red;
+    }
+
+    50% {
+        color: white;
+    }
+
+    100% {
+        color: red;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+label,
+select {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+input,
+select {
+    padding: 5px;
+    font-size: 1em;
+    border: 4px solid lightslategray;
+    background-color: #fff;
+    color: #000;
+    outline: none;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+    background-color: #4caf50;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #44f814;
+    color: #fff;
+}
+
+select {
+    text-align: center;
+}
+
+a {
+    color: #fff;
+    background-color: #4caf50;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 4px solid lightslategray;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+a:hover {
+    cursor: pointer;
+    background-color: #44f814;
+    text-align: center;
+}
+
+#cesped {
+    height: 20vh;
+    width: 100%;
+    background-image: url(https://abrakadabra.fun/uploads/posts/2021-12/thumbs/1639895905_37-abrakadabra-fun-p-zemlya-piksel-art-40.png);
+}
+
+#topoMoviendose {
+    z-index: 99;
+    position: relative;
+    left: -800px;
+    top: 3vh;
+    height: 100px;
+    width: 100px;
+    animation: moverse 4s infinite linear,
+        saltitos 0.3s linear infinite both;
+    animation-delay: 2s;
+    transform: scaleX(-1);
+}
+
+@keyframes moverse {
+    from {
+        left: -100%;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes saltitos {
+    0% {
+        transform: translate(0) scaleX(-1);
+    }
+
+    20% {
+        transform: translate(-2px, 2px) scaleX(-1);
+    }
+
+    40% {
+        transform: translate(-2px, -2px) scaleX(-1);
+    }
+
+    60% {
+        transform: translate(2px, 2px) scaleX(-1);
+    }
+
+    80% {
+        transform: translate(2px, -2px) scaleX(-1);
+    }
+
+    100% {
+        transform: translate(0) scaleX(-1);
+    }
+}

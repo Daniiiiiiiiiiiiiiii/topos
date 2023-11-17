@@ -1,0 +1,116 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-image: url(https://i.pinimg.com/originals/27/b1/c4/27b1c4179a1bc3d819958cd920030740.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#informacionJuego {
+    margin: auto;
+    height: 5vh;
+    width: 100%;
+    font-size: 1.5em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+#boton {
+    margin: 50px auto auto auto;
+    display: block;
+    background-color: green;
+    color: whitesmoke;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#boton:hover {
+    opacity: 80%;
+}
+
+.juego {
+    height: 65vh;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 30% 30% 30%;
+    grid-template-columns: 20% 20% 20%;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.agujero {
+    margin: auto;
+    background: url("../imgs/hoyo.png") bottom center no-repeat;
+    background-size: contain;
+    height: 100px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items:flex-end
+}
+
+#cesped {
+    height: 6vh;
+    width: 100%;
+    background-image: url(https://abrakadabra.fun/uploads/posts/2021-12/thumbs/1639895905_37-abrakadabra-fun-p-zemlya-piksel-art-40.png);
+}
+
+#topoMoviendose {
+    z-index: 99;
+    position: relative;
+    left: -100px;
+    top: 3vh;
+    height: 100px;
+    width: 100px;
+    animation: moverse 4s infinite linear, saltitos 0.3s linear infinite both;
+    animation-delay: 2s;
+    transform: scaleX(-1);
+}
+
+#elemento {
+    position: relative;
+    top: -10px;
+    height: 100px;
+    width: 100px;
+    z-index: 99;
+}
+
+@keyframes moverse {
+    from {
+        left: -100px;
+    }
+
+    to {
+        left: 90%;
+    }
+}
+
+@keyframes saltitos {
+    0% {
+        transform: translate(0) scaleX(-1);
+    }
+
+    20% {
+        transform: translate(-2px, 2px) scaleX(-1);
+    }
+
+    40% {
+        transform: translate(-2px, -2px) scaleX(-1);
+    }
+
+    60% {
+        transform: translate(2px, 2px) scaleX(-1);
+    }
+
+    80% {
+        transform: translate(2px, -2px) scaleX(-1);
+    }
+
+    100% {
+        transform: translate(0) scaleX(-1);
+    }
+}
