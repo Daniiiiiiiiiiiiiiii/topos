@@ -31,6 +31,9 @@ body {
     border: none;
     padding: 10px;
     border-radius: 8px;
+    animation: aparecer 3s 1 linear forwards;
+    animation-delay: 2s;
+    opacity: 0;
 }
 
 #boton:hover {
@@ -52,12 +55,21 @@ body {
     margin: auto;
     background: url("../imgs/hoyo.png") bottom center no-repeat;
     background-size: contain;
+    opacity: 0;
     height: 100px;
     width: 200px;
     display: flex;
     justify-content: center;
     align-items:flex-end;
     cursor: url("../imgs/Martillo.png"),auto;
+    animation: aparecer 3s 1 linear forwards;
+    animation-delay: 2s;
+}
+
+@keyframes aparecer {
+    to {
+        opacity: 100;
+    }
 }
 
 .agujero:active{
@@ -71,7 +83,7 @@ body {
     width: 100%;
     z-index: -1;
     background-image: url(https://abrakadabra.fun/uploads/posts/2021-12/thumbs/1639895905_37-abrakadabra-fun-p-zemlya-piksel-art-40.png);
-    animation: subirCesped 3s 1 linear forwards;
+    animation: subirCesped 2s 1 linear forwards;
 }
 
 #barro {
@@ -83,7 +95,7 @@ body {
     height: 90vh;
     width: 100%;
     z-index: -2;
-    animation: subirCesped 3s 1 linear forwards;    
+    animation: subirCesped 2s 1 linear forwards;    
 }
 
 @keyframes subirCesped {
