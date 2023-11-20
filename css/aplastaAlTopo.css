@@ -23,6 +23,13 @@ body {
     gap: 50px;
 }
 
+#botones {
+    margin: auto;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
 #boton {
     margin: 50px auto auto auto;
     display: block;
