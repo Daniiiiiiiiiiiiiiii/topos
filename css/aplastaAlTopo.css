@@ -1,9 +1,11 @@
 body {
     padding: 0;
     margin: 0;
+    height: 100vh;
     background-image: url(https://i.pinimg.com/originals/27/b1/c4/27b1c4179a1bc3d819958cd920030740.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
 }
 
 #informacionJuego {
@@ -59,9 +61,31 @@ body {
 }
 
 #cesped {
-    height: 6vh;
+    position: absolute;
+    top: 80vh;
+    height: 70vh;
     width: 100%;
+    z-index: -1;
     background-image: url(https://abrakadabra.fun/uploads/posts/2021-12/thumbs/1639895905_37-abrakadabra-fun-p-zemlya-piksel-art-40.png);
+    animation: subirCesped 3s 1 linear forwards;
+}
+
+#barro {
+    position: absolute;
+    background-color: brown;
+    height: 90vh;
+    width: 100%;
+    z-index: -2;
+    animation: subirCesped 3s 1 linear forwards;    
+}
+
+@keyframes subirCesped {
+    from {
+        top: 80vh;
+    }
+    to {
+        top: 20vh;
+    }
 }
 
 #topoMoviendose {
