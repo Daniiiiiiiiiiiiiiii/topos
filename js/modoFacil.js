@@ -19,7 +19,7 @@ var agujeros;
     function jugar() {
         iniciarTemporizador();
         document.getElementById("boton").disabled = true;
-
+        var tiempoRandom = Math.round(Math.random() * (1500 - 1300) + 1300);
         var intervalo = setInterval(function () {
             var agujeroRandom = seleccionarAgujeroAleatorio();
 
@@ -35,13 +35,14 @@ var agujeros;
                 topo.removeEventListener('click', sumarPuntuacion);
 
             }
-        }, 1500);
+        }, tiempoRandom);
     }
 
     function sumarPuntuacion(e) {
         if(puntuacion == puntuacionActual){
             puntuacion++;
             document.getElementById("puntuacion").innerText = puntuacion;
+            elemento.parentElement.removeChild(elemento);
         }
     }
 

@@ -1,5 +1,5 @@
 var agujeros;
-    var topo;
+    var elemento;
     window.onload = function () {
         agujeros = document.querySelectorAll('.agujero');
 
@@ -18,7 +18,7 @@ var agujeros;
     function jugar() {
         iniciarTemporizador();
         document.getElementById("boton").disabled = true;
-
+        var tiempoRandom = Math.round(Math.random() * (1100 - 900) + 900);
         var intervalo = setInterval(function () {
             var agujeroRandom = seleccionarAgujeroAleatorio();
 
@@ -48,12 +48,12 @@ var agujeros;
             punto = 1;
         } else if(elementoRandom > 1.5 && elementoRandom <= 3.25){
             elemento.src = "imgs/familia.png";
-            elemento.alt = "Topo";
+            elemento.alt = "Familia";
             elemento.id = "elemento";
             punto = 3;
         } else if(elementoRandom > 3.25 && elementoRandom <= 5){
             elemento.src = "imgs/topoConCasco.png";
-            elemento.alt = "Topo";
+            elemento.alt = "TopoCasco";
             elemento.id = "elemento";
             punto = 0;
         } else if(elementoRandom > 5 && elementoRandom <= 7){
@@ -63,12 +63,12 @@ var agujeros;
             punto = -3;
         } else if (elementoRandom > 7 && elementoRandom <= 8){
             elemento.src = "imgs/bombaDorada.png";
-            elemento.alt = "Bomba";
+            elemento.alt = "BombaDorada";
             elemento.id = "elemento";
             punto = -6;
         } else{
             elemento.src = "imgs/topoDorado.png";
-            elemento.alt = "Topo";
+            elemento.alt = "TopoDorado";
             elemento.id = "elemento";
             punto = 6;
         }
@@ -79,6 +79,7 @@ var agujeros;
         if(puntuacion == puntuacionActual){
             puntuacion += punto;
             document.getElementById("puntuacion").innerText = puntuacion;
+            elemento.parentElement.removeChild(elemento);
         }
     }
 
@@ -88,14 +89,14 @@ var agujeros;
     }
 
     function AgujeroVacio(agujero) {
-        var tieneTopo = false;
+        var tieneElemento = false;
         var imagen = agujero.querySelector('img');
         
         if (imagen) {
-            tieneTopo = imagen.alt === 'Topo';
+            tieneElemento = imagen.alt === 'Elemento';
         }
 
-        return tieneTopo;
+        return tieneElemento;
     }
 
     function actualizarTemporizador() {

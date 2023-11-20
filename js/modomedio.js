@@ -1,5 +1,5 @@
 var agujeros;
-    var topo;
+    var elemento;
     window.onload = function () {
         agujeros = document.querySelectorAll('.agujero');
 
@@ -18,7 +18,7 @@ var agujeros;
     function jugar() {
         iniciarTemporizador();
         document.getElementById("boton").disabled = true;
-
+        var tiempoRandom = Math.round(Math.random() * (1300 - 1100) + 1100);
         var intervalo = setInterval(function () {
             var agujeroRandom = seleccionarAgujeroAleatorio();
 
@@ -35,7 +35,7 @@ var agujeros;
                 elemento.removeEventListener('click', sumarPuntuacion);
 
             }
-        }, 1500);
+        }, tiempoRandom);
     }
 
     function elegirElemento(){
@@ -46,13 +46,13 @@ var agujeros;
             elemento.alt = "Topo";
             elemento.id = "elemento";
             punto = 1;
-        } else if(elementoRandom > 4 && elementoRandom <= 5.5){//familia topo
-            elemento.src = "imgs/topoDorado.png";
+        } else if(elementoRandom > 4 && elementoRandom <= 5.5){
+            elemento.src = "imgs/Familia.png";
             elemento.alt = "Topo";
             elemento.id = "elemento";
             punto = 3;
-        } else if(elementoRandom > 5.5 && elementoRandom <= 7){//con casco
-            elemento.src = "imgs/topoMoviendose.png";
+        } else if(elementoRandom > 5.5 && elementoRandom <= 7){
+            elemento.src = "imgs/topoConCasco.png";
             elemento.alt = "Topo";
             elemento.id = "elemento";
             punto = 0;
@@ -69,6 +69,7 @@ var agujeros;
         if(puntuacion == puntuacionActual){
             puntuacion += punto;
             document.getElementById("puntuacion").innerText = puntuacion;
+            elemento.parentElement.removeChild(elemento);
         }
     }
 
@@ -78,14 +79,14 @@ var agujeros;
     }
 
     function AgujeroVacio(agujero) {
-        var tieneTopo = false;
+        var tieneElemento = false;
         var imagen = agujero.querySelector('img');
         
         if (imagen) {
-            tieneTopo = imagen.alt === 'Topo';
+            tieneElemento = imagen.alt === 'Elemento';
         }
 
-        return tieneTopo;
+        return tieneElemento;
     }
 
     function actualizarTemporizador() {
