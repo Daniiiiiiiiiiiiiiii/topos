@@ -10,6 +10,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
+    cursor: url("../imgs/Martillo.png"),auto;
 }
 
 #informacionJuego {
@@ -41,6 +42,8 @@ body {
     animation: aparecer 3s 1 linear forwards;
     animation-delay: 2s;
     opacity: 0;
+    text-decoration: none;
+    font-size: 16px;
 }
 
 #boton:hover {
@@ -68,7 +71,6 @@ body {
     display: flex;
     justify-content: center;
     align-items:flex-end;
-    cursor: url("../imgs/Martillo.png"),auto;
     animation: aparecer 3s 1 linear forwards;
     animation-delay: 2s;
 }
