@@ -93,6 +93,13 @@ var agujeros;
         document.getElementById("temporizador").innerText = tiempoRestante + "s";
     }
 
+    function reiniciarJuego(){
+        tiempoRestante = 60;
+        puntuacion = 0;
+        puntuacionActual = 0;
+        document.getElementById("puntuacion").innerText = puntuacion;
+    }
+
     function iniciarTemporizador() {
         var temporizador = setInterval(function () {
             tiempoRestante--;
@@ -102,6 +109,7 @@ var agujeros;
                 clearInterval(temporizador);
                 alert("¡Tiempo agotado!");
                 document.getElementById("boton").disabled = false;
+                reiniciarJuego();
             }
         }, 1000);
     }
