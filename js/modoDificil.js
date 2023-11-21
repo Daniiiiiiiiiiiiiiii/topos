@@ -105,6 +105,7 @@ function AgujeroVacio(agujero) {
         tieneElemento = imagen.alt === 'Elemento';
     }
 
+<<<<<<< HEAD
     return tieneElemento;
 }
 
@@ -124,3 +125,25 @@ function iniciarTemporizador() {
         }
     }, 1000);
 }
+=======
+    function reiniciarJuego(){
+        tiempoRestante = 60;
+        puntuacion = 0;
+        puntuacionActual = 0;
+        document.getElementById("puntuacion").innerText = puntuacion;
+    }
+
+    function iniciarTemporizador() {
+        var temporizador = setInterval(function () {
+            tiempoRestante--;
+            actualizarTemporizador();
+
+            if (tiempoRestante <= 0) {
+                clearInterval(temporizador);
+                alert("¡Tiempo agotado!");
+                document.getElementById("boton").disabled = false;
+                reiniciarJuego();
+            }
+        }, 1000);
+    }
+>>>>>>> 35eb8091222a2c517a732ee2030e6884db5ec08c

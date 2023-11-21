@@ -98,8 +98,6 @@ body {
 #barro {
     position: absolute;
     background-image: url(../imgs/Subsuelo.png);
-    background-repeat: repeat;
-    background-size: cover;
     top: 90vh;
     height: 90vh;
     width: 100%;
