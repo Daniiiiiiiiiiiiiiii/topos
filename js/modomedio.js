@@ -1,13 +1,12 @@
 var agujeros;
 var elemento;
 window.onload = function () {
-    agujeros = document.querySelectorAll('.agujero');
+  agujeros = document.querySelectorAll(".agujero");
 
-    document.getElementById("boton").addEventListener("click", jugar);
+  document.getElementById("boton").addEventListener("click", jugar);
 
-    elemento = document.createElement("img");
-    elemento.addEventListener('click', sumarPuntuacion)
-
+  elemento = document.createElement("img");
+  elemento.addEventListener("click", sumarPuntuacion);
 };
 
 var puntuacion = 0;
@@ -16,124 +15,106 @@ var puntuacionActual = 0;
 var punto = 0;
 
 function jugar() {
-    iniciarTemporizador();
-    document.getElementById("boton").disabled = true;
-    var tiempoRandom = Math.round(Math.random() * (1300 - 1100) + 1100);
-    var intervalo = setInterval(function () {
-        var agujeroRandom = seleccionarAgujeroAleatorio();
+  iniciarTemporizador();
+  document.getElementById("boton").disabled = true;
+  var tiempoRandom = Math.round(Math.random() * (1300 - 1100) + 1100);
+  var intervalo = setInterval(function () {
+    var agujeroRandom = seleccionarAgujeroAleatorio();
 
-        if (!AgujeroVacio(agujeros[agujeroRandom])) {
-            puntuacionActual = puntuacion;
-            elegirElemento();
-            agujeros[agujeroRandom].appendChild(elemento);
-        }
+    if (!AgujeroVacio(agujeros[agujeroRandom])) {
+      puntuacionActual = puntuacion;
+      elegirElemento();
+      agujeros[agujeroRandom].appendChild(elemento);
+    }
 
-        if (tiempoRestante <= 0) {
-            clearInterval(intervalo);
-            alert("¡Tiempo agotado!");
-            document.getElementById("boton").disabled = false;
-            elemento.removeEventListener('click', sumarPuntuacion);
-            var puntuacionFinal = puntuacion;
-            puntuacion = 0;
-            localStorage.setItem('Puntuacion', puntuacionFinal);
-            let usuario =
-            {
-                "nombre": localStorage.getItem('nombreUsuario'),
-                "dificultad": localStorage.getItem('dificultad'),
-                "puntuacion": puntuacionFinal
-            };
-            guardarPuntuacion();
-        }
-    }, tiempoRandom);
+    if (tiempoRestante <= 0) {
+      clearInterval(intervalo);
+      alert("¡Tiempo agotado!");
+      document.getElementById("boton").disabled = false;
+      elemento.removeEventListener("click", sumarPuntuacion);
+      var puntuacionFinal = puntuacion;
+      puntuacion = 0;
+      localStorage.setItem("Puntuacion", puntuacionFinal);
+      let usuario = {
+        nombre: localStorage.getItem("nombreUsuario"),
+        dificultad: localStorage.getItem("dificultad"),
+        puntuacion: puntuacionFinal,
+      };
+      guardarPuntuacion();
+    }
+  }, tiempoRandom);
 }
 
 function elegirElemento() {
-    var elementoRandom = Math.floor(Math.random() * 10.00);
+  var elementoRandom = Math.floor(Math.random() * 10.0);
 
-    if (elementoRandom >= 0 && elementoRandom <= 4) {
-        elemento.src = "imgs/topo.png";
-        elemento.alt = "Topo";
-        elemento.id = "elemento";
-        punto = 1;
-    } else if (elementoRandom > 4 && elementoRandom <= 5.5) {
-        elemento.src = "imgs/Familia.png";
-        elemento.alt = "Topo";
-        elemento.id = "elemento";
-        punto = 3;
-    } else if (elementoRandom > 5.5 && elementoRandom <= 7) {
-        elemento.src = "imgs/topoConCasco.png";
-        elemento.alt = "Topo";
-        elemento.id = "elemento";
-        punto = 0;
-    } else {
-        elemento.src = "imgs/bomba.png";
-        elemento.alt = "Bomba";
-        elemento.id = "elemento";
-        punto = -3;
-    }
-
+  if (elementoRandom >= 0 && elementoRandom <= 4) {
+    elemento.src = "imgs/topo.png";
+    elemento.alt = "Topo";
+    elemento.id = "elemento";
+    punto = 1;
+  } else if (elementoRandom > 4 && elementoRandom <= 5.5) {
+    elemento.src = "imgs/Familia.png";
+    elemento.alt = "Topo";
+    elemento.id = "elemento";
+    punto = 3;
+  } else if (elementoRandom > 5.5 && elementoRandom <= 7) {
+    elemento.src = "imgs/topoConCasco.png";
+    elemento.alt = "Topo";
+    elemento.id = "elemento";
+    punto = 0;
+  } else {
+    elemento.src = "imgs/bomba.png";
+    elemento.alt = "Bomba";
+    elemento.id = "elemento";
+    punto = -3;
+  }
 }
 
 function sumarPuntuacion(e) {
-    if (puntuacion == puntuacionActual) {
-        puntuacion += punto;
-        document.getElementById("puntuacion").innerText = puntuacion;
-        elemento.parentElement.removeChild(elemento);
-    }
+  if (puntuacion == puntuacionActual) {
+    puntuacion += punto;
+    document.getElementById("puntuacion").innerText = puntuacion;
+    elemento.parentElement.removeChild(elemento);
+  }
 }
 
-
 function seleccionarAgujeroAleatorio() {
-    return Math.floor(Math.random() * agujeros.length);
+  return Math.floor(Math.random() * agujeros.length);
 }
 
 function AgujeroVacio(agujero) {
-    var tieneElemento = false;
-    var imagen = agujero.querySelector('img');
+  var tieneElemento = false;
+  var imagen = agujero.querySelector("img");
 
-    if (imagen) {
-        tieneElemento = imagen.alt === 'Elemento';
-    }
+  if (imagen) {
+    tieneElemento = imagen.alt === "Elemento";
+  }
 
-<<<<<<< HEAD
-    return tieneElemento;
+  return tieneElemento;
 }
 
 function actualizarTemporizador() {
-    document.getElementById("temporizador").innerText = tiempoRestante + "s";
+  document.getElementById("temporizador").innerText = tiempoRestante + "s";
 }
 
-function iniciarTemporizador() {
-    var temporizador = setInterval(function () {
-        tiempoRestante--;
-        actualizarTemporizador();
-
-        if (tiempoRestante <= 0) {
-            clearInterval(temporizador);
-            alert("¡Tiempo agotado!");
-            document.getElementById("boton").disabled = false;
-        }
-    }, 1000);
-}
-=======
-    function reiniciarJuego(){
+/*function reiniciarJuego(){
         tiempoRestante = 60;
         puntuacion = 0;
         puntuacionActual = 0;
         document.getElementById("puntuacion").innerText = puntuacion;
-    }
+    }*/
 
-    function iniciarTemporizador() {
-        var temporizador = setInterval(function () {
-            tiempoRestante--;
-            actualizarTemporizador();
+function iniciarTemporizador() {
+  var temporizador = setInterval(function () {
+    tiempoRestante--;
+    actualizarTemporizador();
 
-            if (tiempoRestante <= 0) {
-                clearInterval(temporizador);
-                alert("¡Tiempo agotado!");
-                document.getElementById("boton").disabled = false;
-                reiniciarJuego();
-            }
-        }, 1000);
+    if (tiempoRestante <= 0) {
+      clearInterval(temporizador);
+      alert("¡Tiempo agotado!");
+      document.getElementById("boton").disabled = false;
+      //reiniciarJuego();
     }
->>>>>>> 35eb8091222a2c517a732ee2030e6884db5ec08c
+  }, 1000);
+}
