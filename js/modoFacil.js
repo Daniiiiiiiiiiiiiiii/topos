@@ -14,7 +14,7 @@ window.onload = function () {
 };
 
 var puntuacion = 0;
-var tiempoRestante = 60;
+var tiempoRestante = 5;
 var puntuacionActual = 0;
 
 function jugar() {
@@ -43,7 +43,7 @@ function jugar() {
         dificultad: localStorage.getItem("dificultad"),
         puntuacion: puntuacionFinal,
       };
-      guardarPuntuacion();
+      guardarPuntuacion(usuario);
     }
   }, tiempoRandom);
 }
@@ -89,6 +89,8 @@ function iniciarTemporizador() {
 }
 
 function guardarPuntuacion(usuario) {
-    var datosJSON = JSON.stringify(usuario);
-    localStorage.setItem('Jugador', datosJSON);
+  console.log('Guardando usuario:', usuario);
+  var jugadores = JSON.parse(localStorage.getItem('Jugador')) || [];
+  jugadores.push(usuario);
+  localStorage.setItem('Jugador', JSON.stringify(jugadores));
 }

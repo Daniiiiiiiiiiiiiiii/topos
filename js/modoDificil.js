@@ -40,7 +40,7 @@ function jugar() {
         dificultad: localStorage.getItem("dificultad"),
         puntuacion: puntuacionFinal,
       };
-      guardarPuntuacion();
+      guardarPuntuacion(usuario);
     }
   }, 1500);
 }
@@ -127,4 +127,11 @@ function iniciarTemporizador() {
       //reiniciarJuego();
     }
   }, 1000);
+}
+
+function guardarPuntuacion(usuario) {
+  console.log('Guardando usuario:', usuario);
+  var jugadores = JSON.parse(localStorage.getItem('Jugador')) || [];
+  jugadores.push(usuario);
+  localStorage.setItem('Jugador', JSON.stringify(jugadores));
 }

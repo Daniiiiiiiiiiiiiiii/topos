@@ -32,16 +32,14 @@
     <div id="cesped"></div>
 
     <script>
-        // Obtener jugadores del localStorage
         var jugadores = JSON.parse(localStorage.getItem('Jugador'));
         console.log(jugadores);
 
         function agregarJugadoresEnCajas() {
-            if (jugadores && jugadores.length > 0) {
+            if (jugadores) {
                 jugadores.forEach(function (jugador) {
-                    // Crear un elemento para el jugador
                     var jugadorElemento = document.createElement('div');
-                    jugadorElemento.textContent = jugador.nombre + "," + jugador.puntuacion;
+                    jugadorElemento.textContent = jugador.nombre + " " + jugador.puntuacion;
 
                     var cajaId = '';
                     switch (jugador.dificultad) {
@@ -55,16 +53,20 @@
                             cajaId = 'dificil';
                             break;
                         default:
+                            console.log('no funciona');
                             break;
                     }
 
                     var caja = document.getElementById(cajaId);
                     caja.appendChild(jugadorElemento);
                 });
+            } else {
+                console.log("no entra jugadores...");
             }
         }
         agregarJugadoresEnCajas();
     </script>
+
 </body>
 
 </html>
