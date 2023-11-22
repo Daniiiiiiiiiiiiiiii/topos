@@ -95,28 +95,7 @@ function AgujeroVacio(agujero) {
         tieneElemento = imagen.alt === 'Elemento';
     }
 
-<<<<<<< HEAD
-    return tieneElemento;
-}
-
-function actualizarTemporizador() {
-    document.getElementById("temporizador").innerText = tiempoRestante + "s";
-}
-
-function iniciarTemporizador() {
-    var temporizador = setInterval(function () {
-        tiempoRestante--;
-        actualizarTemporizador();
-
-        if (tiempoRestante <= 0) {
-            clearInterval(temporizador);
-            alert("¡Tiempo agotado!");
-            document.getElementById("boton").disabled = false;
-        }
-    }, 1000);
-}
-=======
-    function reiniciarJuego(){
+    function reiniciarJuego() {
         tiempoRestante = 60;
         puntuacion = 0;
         puntuacionActual = 0;
@@ -136,4 +115,4 @@ function iniciarTemporizador() {
             }
         }, 1000);
     }
->>>>>>> 35eb8091222a2c517a732ee2030e6884db5ec08c
+}
