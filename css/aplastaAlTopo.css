@@ -97,7 +97,7 @@ body {
 
 #barro {
     position: absolute;
-    background-image: url(../imgs/Subsuelo.png);
+    background-color: burlywood;
     top: 90vh;
     height: 90vh;
     width: 100%;

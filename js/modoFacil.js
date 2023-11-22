@@ -75,23 +75,20 @@ function actualizarTemporizador() {
   document.getElementById("temporizador").innerText = tiempoRestante + "s";
 }
 
-/*function reiniciarJuego(){
-        tiempoRestante = 60;
-        puntuacion = 0;
-        puntuacionActual = 0;
-        document.getElementById("puntuacion").innerText = puntuacion;
-    }*/
-
 function iniciarTemporizador() {
-  var temporizador = setInterval(function () {
-    tiempoRestante--;
-    actualizarTemporizador();
+    var temporizador = setInterval(function () {
+        tiempoRestante--;
+        actualizarTemporizador();
 
-    if (tiempoRestante <= 0) {
-      clearInterval(temporizador);
-      alert("¡Tiempo agotado!");
-      document.getElementById("boton").disabled = false;
-      //reiniciarJuego();
-    }
-  }, 1000);
+        if (tiempoRestante <= 0) {
+            clearInterval(temporizador);
+            alert("¡Tiempo agotado!");
+            document.getElementById("boton").disabled = false;
+        }
+    }, 1000);
+}
+
+function guardarPuntuacion(usuario) {
+    var datosJSON = JSON.stringify(usuario);
+    localStorage.setItem('Jugador', datosJSON);
 }

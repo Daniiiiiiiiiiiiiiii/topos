@@ -10,26 +10,61 @@
 </head>
 
 <body>
-    <h1>marcador</h1>
+    <h1>Marcador</h1>
     <div id="container">
-        <div class="marcador">
+        <div class="marcador" id="facil">
             <div id="dificultad">
-                <h3>Facil</h3>
+                <h3>Fácil</h3>
             </div>
         </div>
-        <div class="marcador">
+        <div class="marcador" id="media">
             <div id="dificultad">
                 <h3>Media</h3>
             </div>
         </div>
-        <div class="marcador">
+        <div class="marcador" id="dificil">
             <div id="dificultad">
-                <h3>Dificil</h3>
+                <h3>Difícil</h3>
             </div>
         </div>
     </div>
     <img src="imgs/topoMoviendose.png" alt="topo" id="topoMoviendose">
     <div id="cesped"></div>
+
+    <script>
+        // Obtener jugadores del localStorage
+        var jugadores = JSON.parse(localStorage.getItem('Jugador'));
+        console.log(jugadores);
+
+        function agregarJugadoresEnCajas() {
+            if (jugadores && jugadores.length > 0) {
+                jugadores.forEach(function (jugador) {
+                    // Crear un elemento para el jugador
+                    var jugadorElemento = document.createElement('div');
+                    jugadorElemento.textContent = jugador.nombre + "," + jugador.puntuacion;
+
+                    var cajaId = '';
+                    switch (jugador.dificultad) {
+                        case 'facil':
+                            cajaId = 'facil';
+                            break;
+                        case 'media':
+                            cajaId = 'media';
+                            break;
+                        case 'dificil':
+                            cajaId = 'dificil';
+                            break;
+                        default:
+                            break;
+                    }
+
+                    var caja = document.getElementById(cajaId);
+                    caja.appendChild(jugadorElemento);
+                });
+            }
+        }
+        agregarJugadoresEnCajas();
+    </script>
 </body>
 
 </html>
