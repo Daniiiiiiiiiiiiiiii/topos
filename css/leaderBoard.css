@@ -40,7 +40,7 @@ h1 {
     width: 95%;
     display: flex;
     justify-content: space-around;
-    gap: 5vh;
+    gap: 3vh;
 }
 
 .marcador {
@@ -50,12 +50,7 @@ h1 {
     background-color: whitesmoke;
     border-radius: 8px;
     padding: 30px;
-}
-
-#dificultad::before {
-    content: "Dificultad:";
-    font-weight: bold;
-    font-size: 18px;
+    text-align: center;
 }
 
 #cesped {
@@ -123,6 +118,6 @@ h1 {
 
     .marcador {
         height: auto;
-        margin-bottom: 10vh;
+        margin-bottom: 10vh;
     }
 }
