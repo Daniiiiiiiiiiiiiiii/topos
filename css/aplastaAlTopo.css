@@ -88,21 +88,11 @@ body {
 #cesped {
     position: absolute;
     top: 80vh;
-    height: 70vh;
+    height: 90vh;
     width: 100%;
     z-index: -1;
     background-image: url(https://abrakadabra.fun/uploads/posts/2021-12/thumbs/1639895905_37-abrakadabra-fun-p-zemlya-piksel-art-40.png);
     animation: subirCesped 2s 1 linear forwards;
-}
-
-#barro {
-    position: absolute;
-    background-color: burlywood;
-    top: 90vh;
-    height: 90vh;
-    width: 100%;
-    z-index: -2;
-    animation: subirCesped 2s 1 linear forwards;    
 }
 
 @keyframes subirCesped {

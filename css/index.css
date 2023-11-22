@@ -43,6 +43,10 @@ h1 {
     }
 }
 
+h3 span{
+    color: red;
+}
+
 form {
     display: flex;
     flex-direction: column;

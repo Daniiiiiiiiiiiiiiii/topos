@@ -1,72 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="https://fonts.googleapis.com/css?family=Press Start 2P" rel="stylesheet" />
-    <link rel="stylesheet" href="css/leaderboard.css">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Press Start 2P"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/leaderboard.css" />
+    
+  </head>
 
-<body>
+  <body>
     <h1>Marcador</h1>
     <div id="container">
-        <div class="marcador" id="facil">
-            <div id="dificultad">
-                <h3>Fácil</h3>
-            </div>
+      <div class="marcador" id="facil">
+        <div id="dificultad">
+          <h3>Dificultad <span>Fácil</span></h3>
         </div>
-        <div class="marcador" id="media">
-            <div id="dificultad">
-                <h3>Media</h3>
-            </div>
+      </div>
+      <div class="marcador" id="media">
+        <div id="dificultad">
+          <h3>Dificultad <span>Media</span></h3>
         </div>
-        <div class="marcador" id="dificil">
-            <div id="dificultad">
-                <h3>Difícil</h3>
-            </div>
+      </div>
+      <div class="marcador" id="dificil">
+        <div id="dificultad">
+          <h3>Dificultad <span>Difícil</span></h3>
         </div>
+      </div>
     </div>
-    <img src="imgs/topoMoviendose.png" alt="topo" id="topoMoviendose">
+    <a href="Index.html">Volver</a>
+    <img src="imgs/topoMoviendose.png" alt="topo" id="topoMoviendose" />
     <div id="cesped"></div>
-
-    <script>
-        var jugadores = JSON.parse(localStorage.getItem('Jugador'));
-        console.log(jugadores);
-
-        function agregarJugadoresEnCajas() {
-            if (jugadores) {
-                jugadores.forEach(function (jugador) {
-                    var jugadorElemento = document.createElement('div');
-                    jugadorElemento.textContent = jugador.nombre + " " + jugador.puntuacion;
-
-                    var cajaId = '';
-                    switch (jugador.dificultad) {
-                        case 'facil':
-                            cajaId = 'facil';
-                            break;
-                        case 'media':
-                            cajaId = 'media';
-                            break;
-                        case 'dificil':
-                            cajaId = 'dificil';
-                            break;
-                        default:
-                            console.log('no funciona');
-                            break;
-                    }
-
-                    var caja = document.getElementById(cajaId);
-                    caja.appendChild(jugadorElemento);
-                });
-            } else {
-                console.log("no entra jugadores...");
-            }
-        }
-        agregarJugadoresEnCajas();
-    </script>
-
-</body>
-
+  </body>
+  <script src="js/leaderBoard.js"></script>
 </html>
