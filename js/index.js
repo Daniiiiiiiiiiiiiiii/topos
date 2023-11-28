@@ -3,6 +3,9 @@ function guardarEnLocalStorage(nombre, valor) {
 }
 
 function cargarPagina() {
+    audio = document.getElementById('audio');
+    audio.play()
+    
     const formularioJuego = document.getElementById('formularioJuego');
 
     formularioJuego.addEventListener('submit', function (e) {
