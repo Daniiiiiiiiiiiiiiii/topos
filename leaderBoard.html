@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Press Start 2P"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/leaderboard.css" />
-    
-  </head>
 
-  <body>
-    <h1>Marcador</h1>
-    <div id="container">
-      <div class="marcador" id="facil">
-        <div id="dificultad">
-          <h3>Dificultad <span>Fácil</span></h3>
-        </div>
-      </div>
-      <div class="marcador" id="media">
-        <div id="dificultad">
-          <h3>Dificultad <span>Media</span></h3>
-        </div>
-      </div>
-      <div class="marcador" id="dificil">
-        <div id="dificultad">
-          <h3>Dificultad <span>Difícil</span></h3>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Press Start 2P" rel="stylesheet" />
+  <link rel="stylesheet" href="css/leaderboard.css" />
+
+</head>
+
+<body>
+  <audio loop id="audio">
+    <source src="music/Juego.ogg" type="audio/ogg">
+    Tu navegador no soporta la etiqueta de audio.
+  </audio>
+  <h1>Marcador</h1>
+  <div id="container">
+    <div class="marcador" id="facil">
+      <div id="dificultad">
+        <h3>Dificultad <span>Fácil</span></h3>
       </div>
     </div>
-    <a href="Index.html">Volver</a>
-    <img src="imgs/topoMoviendose.png" alt="topo" id="topoMoviendose" />
-    <div id="cesped"></div>
-  </body>
-  <script src="js/leaderBoard.js"></script>
+    <div class="marcador" id="media">
+      <div id="dificultad">
+        <h3>Dificultad <span>Media</span></h3>
+      </div>
+    </div>
+    <div class="marcador" id="dificil">
+      <div id="dificultad">
+        <h3>Dificultad <span>Difícil</span></h3>
+      </div>
+    </div>
+  </div>
+  <a href="Index.html">Volver</a>
+  <img src="imgs/topoMoviendose.png" alt="topo" id="topoMoviendose" />
+  <div id="cesped"></div>
+</body>
+<script src="js/leaderBoard.js"></script>
+
 </html>

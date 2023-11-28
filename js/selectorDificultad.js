@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("load", function () {
   const dificultad = localStorage.getItem("dificultad");
   console.log(dificultad);
 
