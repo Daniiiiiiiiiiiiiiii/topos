@@ -4,7 +4,7 @@ function guardarEnLocalStorage(nombre, valor) {
 
 function cargarPagina() {
     audio = document.getElementById('audio');
-    audio.play()
+    audio.play();
     
     const formularioJuego = document.getElementById('formularioJuego');
 
