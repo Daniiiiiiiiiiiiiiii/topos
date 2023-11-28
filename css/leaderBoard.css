@@ -108,6 +108,7 @@ h1 {
     }
 }
 
+<<<<<<< HEAD
 h3 span{
     color: red;
 }
@@ -132,6 +133,10 @@ a:hover {
     cursor: pointer;
     background-color: #44f814;
     text-align: center;
+=======
+div {
+    border-bottom: 1px solid gainsboro;
+>>>>>>> 5bc299bbd43070046b4b3be97ada086292f382a6
 }
 
 @media only screen and (max-width: 900px) {
