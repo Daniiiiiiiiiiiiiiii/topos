@@ -14,7 +14,7 @@ window.onload = function () {
 };
 
 var puntuacion = 0;
-var tiempoRestante = 5;
+var tiempoRestante = 60;
 var puntuacionActual = 0;
 
 function jugar() {
