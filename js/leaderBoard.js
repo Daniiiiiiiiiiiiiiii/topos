@@ -1,3 +1,8 @@
+window.addEventListener('load',function (){
+  audio = document.getElementById('audio');
+  audio.play();
+});
+
 var jugadores = JSON.parse(localStorage.getItem("Jugador"));
 console.log(jugadores);
 
