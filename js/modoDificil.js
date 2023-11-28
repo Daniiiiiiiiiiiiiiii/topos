@@ -1,6 +1,8 @@
 var agujeros;
 var elemento;
 window.onload = function () {
+  audio = document.getElementById('audio');
+  audio.play();
   agujeros = document.querySelectorAll(".agujero");
 
   document.getElementById("boton").addEventListener("click", jugar);
