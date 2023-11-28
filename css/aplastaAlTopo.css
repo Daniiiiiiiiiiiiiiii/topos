@@ -6,7 +6,7 @@ body {
     padding: 0;
     margin: 0;
     height: 100vh;
-    background-image: url(https://i.pinimg.com/originals/27/b1/c4/27b1c4179a1bc3d819958cd920030740.jpg);
+    background-image: url(../imgs/cielo.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
@@ -91,7 +91,9 @@ body {
     height: 90vh;
     width: 100%;
     z-index: -1;
-    background-image: url(https://abrakadabra.fun/uploads/posts/2021-12/thumbs/1639895905_37-abrakadabra-fun-p-zemlya-piksel-art-40.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../imgs/cesped.png);
     animation: subirCesped 2s 1 linear forwards;
 }
 

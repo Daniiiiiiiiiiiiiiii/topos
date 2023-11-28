@@ -9,7 +9,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url(https://i.pinimg.com/originals/27/b1/c4/27b1c4179a1bc3d819958cd920030740.jpg);
+    background-image: url(../imgs/cielo.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
@@ -46,7 +46,7 @@ h1 {
 .marcador {
     height: 50vh;
     width: 100%;
-    border:3px solid green;
+    border: 3px solid green;
     background-color: whitesmoke;
     border-radius: 8px;
     padding: 30px;
@@ -54,8 +54,10 @@ h1 {
 }
 
 #cesped {
-    height: 10vh;
+    height: 20vh;
     width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
     background-image: url(../imgs/cesped.png);
 }
 
@@ -108,12 +110,11 @@ h1 {
     }
 }
 
-<<<<<<< HEAD
-h3 span{
+h3 span {
     color: red;
 }
 
-#jugador{
+#jugador {
     border-bottom: 1px solid gainsboro;
     padding: 2.5px;
 }
@@ -133,10 +134,10 @@ a:hover {
     cursor: pointer;
     background-color: #44f814;
     text-align: center;
-=======
+}
+
 div {
     border-bottom: 1px solid gainsboro;
->>>>>>> 5bc299bbd43070046b4b3be97ada086292f382a6
 }
 
 @media only screen and (max-width: 900px) {
@@ -149,6 +150,6 @@ div {
 
     .marcador {
         height: auto;
-        margin-bottom: 10vh;
+        margin-bottom: 10vh;
     }
 }
