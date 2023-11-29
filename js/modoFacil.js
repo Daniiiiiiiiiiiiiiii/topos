@@ -46,6 +46,7 @@ function jugar() {
         puntuacion: puntuacionFinal,
       };
       guardarPuntuacion(usuario);
+      document.getElementById('reiniciar').style.visibility = 'visible';
     }
   }, tiempoRandom);
 }
