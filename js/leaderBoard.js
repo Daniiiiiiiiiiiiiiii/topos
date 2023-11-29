@@ -4,7 +4,6 @@ window.addEventListener('load',function (){
 });
 
 var jugadores = JSON.parse(localStorage.getItem("Jugador"));
-console.log(jugadores);
 
 function agregarJugadoresEnCajas() {
   if (jugadores) {
@@ -25,15 +24,12 @@ function agregarJugadoresEnCajas() {
           cajaId = "dificil";
           break;
         default:
-          console.log("no funciona");
           break;
       }
 
       var caja = document.getElementById(cajaId);
       caja.appendChild(jugadorElemento);
     });
-  } else {
-    console.log("no entra jugadores...");
   }
 }
 agregarJugadoresEnCajas();
