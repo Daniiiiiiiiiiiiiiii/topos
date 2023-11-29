@@ -84,6 +84,13 @@ function elegirElemento() {
 }
 
 function sumarPuntuacion(e) {
+  if (elemento.src == "imgs/bomba.png" || elemento.src == "imgs/bombaDorada.png") {
+    audioBomba = document.getElementById('audioBomba');
+    audioBomba.play();
+  } else if (elemento.src == "imgs/topo.png") {
+    audioTopo = document.getElementById('audioTopo');
+    audioTopo.play();
+  }
   if (puntuacion == puntuacionActual) {
     puntuacion += punto;
     document.getElementById("puntuacion").innerText = puntuacion;
