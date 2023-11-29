@@ -83,11 +83,13 @@ function elegirElemento() {
   }
 }
 
+var altElemento = elemento.alt;
+
 function sumarPuntuacion(e) {
-  if (elemento.src == "imgs/bomba.png" || elemento.src == "imgs/bombaDorada.png") {
+  if (altElemento == "BombaDorada" || altElemento == "Bomba") {
     audioBomba = document.getElementById('audioBomba');
     audioBomba.play();
-  } else if (elemento.src == "imgs/topo.png") {
+  } else {
     audioTopo = document.getElementById('audioTopo');
     audioTopo.play();
   }
