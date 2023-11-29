@@ -47,6 +47,8 @@ function jugar() {
   }, tiempoRandom);
 }
 
+var altElemento;
+
 function elegirElemento() {
   var elementoRandom = Math.floor(Math.random() * 10.0);
 
@@ -71,9 +73,17 @@ function elegirElemento() {
     elemento.id = "elemento";
     punto = -3;
   }
+  altElemento = elemento.alt;
 }
 
 function sumarPuntuacion(e) {
+  if (altElemento == "Bomba") {
+    audioBomba = document.getElementById('audioBomba');
+    audioBomba.play();
+  } else {
+    audioTopo = document.getElementById('audioTopo');
+    audioTopo.play();
+  }
   if (puntuacion == puntuacionActual) {
     puntuacion += punto;
     document.getElementById("puntuacion").innerText = puntuacion;

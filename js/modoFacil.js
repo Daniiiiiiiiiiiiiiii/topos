@@ -52,6 +52,8 @@ function jugar() {
 }
 
 function sumarPuntuacion(e) {
+  audioTopo = document.getElementById('audioTopo');
+  audioTopo.play();
   if (puntuacion == puntuacionActual) {
     puntuacion++;
     document.getElementById("puntuacion").innerText = puntuacion;

@@ -46,7 +46,9 @@ function jugar() {
     }
   }, 1500);
 }
+
 var altElemento;
+
 function elegirElemento() {
   var elementoRandom = Math.floor(Math.random() * 10.0);
 
