@@ -3,6 +3,7 @@ var elemento;
 window.onload = function () {
   audio = document.getElementById('audio');
   audio.play();
+  audio.volume = 0.2;
   agujeros = document.querySelectorAll(".agujero");
 
   document.getElementById("boton").addEventListener("click", jugar);
@@ -92,9 +93,11 @@ function sumarPuntuacion(e) {
   if (altElemento == "BombaDorada" || altElemento == "Bomba") {
     audioBomba = document.getElementById('audioBomba');
     audioBomba.play();
+    audioBomba.volume += 0.5;
   } else {
     audioTopo = document.getElementById('audioTopo');
     audioTopo.play();
+    audioTopo.volume += 0.5;
   }
   if (puntuacion == puntuacionActual) {
     puntuacion += punto;

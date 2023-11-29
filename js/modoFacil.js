@@ -4,6 +4,7 @@ var acabado;
 window.onload = function () {
   audio = document.getElementById('audio');
   audio.play();
+  audio.volume = 0.2;
   agujeros = document.querySelectorAll(".agujero");
 
   document.getElementById("boton").addEventListener("click", jugar);
@@ -54,6 +55,7 @@ function jugar() {
 function sumarPuntuacion(e) {
   audioTopo = document.getElementById('audioTopo');
   audioTopo.play();
+  audioTopo.volume += 0.5;
   if (puntuacion == puntuacionActual) {
     puntuacion++;
     document.getElementById("puntuacion").innerText = puntuacion;
