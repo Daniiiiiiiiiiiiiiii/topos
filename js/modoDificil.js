@@ -46,7 +46,7 @@ function jugar() {
     }
   }, 1500);
 }
-
+var altElemento;
 function elegirElemento() {
   var elementoRandom = Math.floor(Math.random() * 10.0);
 
@@ -81,9 +81,10 @@ function elegirElemento() {
     elemento.id = "elemento";
     punto = 6;
   }
+  altElemento = elemento.alt;
 }
 
-var altElemento = elemento.alt;
+
 
 function sumarPuntuacion(e) {
   if (altElemento == "BombaDorada" || altElemento == "Bomba") {
