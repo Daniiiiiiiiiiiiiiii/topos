@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
   const dificultad = localStorage.getItem("dificultad");
-  console.log(dificultad);
 
   let modo = "";
   switch (dificultad) {
