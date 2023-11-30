@@ -1,23 +1,23 @@
 function guardarEnLocalStorage(nombre, valor) {
-    localStorage.setItem(nombre, valor);
+  localStorage.setItem(nombre, valor);
 }
 
 function cargarPagina() {
-    audio = document.getElementById('audio');
-    audio.play();
-    
-    const formularioJuego = document.getElementById('formularioJuego');
+  audio = document.getElementById("audio");
+  audio.play();
 
-    formularioJuego.addEventListener('submit', function (e) {
-        e.preventDefault();
+  const formularioJuego = document.getElementById("formularioJuego");
 
-        const nombreUsuario = document.getElementById('nombre').value;
-        const dificultad = document.getElementById('dificultad').value;
+  formularioJuego.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-        guardarEnLocalStorage('nombreUsuario', nombreUsuario);
-        guardarEnLocalStorage('dificultad', dificultad);
-        window.location.href = 'aplastaElTopo.html';
-    });
+    const nombreUsuario = document.getElementById("nombre").value;
+    const dificultad = document.getElementById("dificultad").value;
+
+    guardarEnLocalStorage("nombreUsuario", nombreUsuario);
+    guardarEnLocalStorage("dificultad", dificultad);
+    window.location.href = "aplastaElTopo.html";
+  });
 }
 
 window.onload = cargarPagina;

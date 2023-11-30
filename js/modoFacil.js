@@ -2,7 +2,7 @@ var agujeros;
 var topo;
 var acabado;
 window.onload = function () {
-  audio = document.getElementById('audio');
+  audio = document.getElementById("audio");
   audio.play();
   audio.volume = 0.2;
   agujeros = document.querySelectorAll(".agujero");
@@ -37,6 +37,7 @@ function jugar() {
       clearInterval(intervalo);
       alert("¡Tiempo agotado!");
       document.getElementById("boton").disabled = false;
+      //deshabilitamos el click en los topos, reiniciamos la puntuación y guardamos en localStorage
       topo.removeEventListener("click", sumarPuntuacion);
       var puntuacionFinal = puntuacion;
       puntuacion = 0;
@@ -47,19 +48,19 @@ function jugar() {
         puntuacion: puntuacionFinal,
       };
       guardarPuntuacion(usuario);
-      document.getElementById('reiniciar').style.visibility = 'visible';
+      document.getElementById("reiniciar").style.visibility = "visible";
     }
   }, tiempoRandom);
 }
 
+//detecta si se da click para sumar la puntuación
 function sumarPuntuacion(e) {
-  audioTopo = document.getElementById('audioTopo');
-  audioTopo.play();
-  audioTopo.volume += 0.5;
   if (puntuacion == puntuacionActual) {
     puntuacion++;
     document.getElementById("puntuacion").innerText = puntuacion;
     elemento.parentElement.removeChild(elemento);
+    audioTopo = document.getElementById("audioTopo");
+    audioTopo.play();
   }
 }
 
@@ -83,21 +84,20 @@ function actualizarTemporizador() {
 }
 
 function iniciarTemporizador() {
-    var temporizador = setInterval(function () {
-        tiempoRestante--;
-        actualizarTemporizador();
+  var temporizador = setInterval(function () {
+    tiempoRestante--;
+    actualizarTemporizador();
 
-        if (tiempoRestante <= 0) {
-            clearInterval(temporizador);
-            alert("¡Tiempo agotado!");
-            document.getElementById("boton").disabled = false;
-        }
-    }, 1000);
+    if (tiempoRestante <= 0) {
+      clearInterval(temporizador);
+      alert("¡Tiempo agotado!");
+      document.getElementById("boton").disabled = false;
+    }
+  }, 1000);
 }
 
 function guardarPuntuacion(usuario) {
-  console.log('Guardando usuario:', usuario);
-  var jugadores = JSON.parse(localStorage.getItem('Jugador')) || [];
+  var jugadores = JSON.parse(localStorage.getItem("Jugador")) || [];
   jugadores.push(usuario);
-  localStorage.setItem('Jugador', JSON.stringify(jugadores));
+  localStorage.setItem("Jugador", JSON.stringify(jugadores));
 }

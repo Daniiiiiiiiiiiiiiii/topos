@@ -90,19 +90,19 @@ function elegirElemento() {
 
 
 function sumarPuntuacion(e) {
-  if (altElemento == "BombaDorada" || altElemento == "Bomba") {
-    audioBomba = document.getElementById('audioBomba');
-    audioBomba.play();
-    audioBomba.volume += 0.5;
-  } else {
-    audioTopo = document.getElementById('audioTopo');
-    audioTopo.play();
-    audioTopo.volume += 0.5;
-  }
   if (puntuacion == puntuacionActual) {
     puntuacion += punto;
     document.getElementById("puntuacion").innerText = puntuacion;
     elemento.parentElement.removeChild(elemento);
+    if (altElemento == "BombaDorada" || altElemento == "Bomba") {
+      audioBomba = document.getElementById('audioBomba');
+      audioBomba.play();
+      audioBomba.volume += 0.5;
+    } else {
+      audioTopo = document.getElementById('audioTopo');
+      audioTopo.play();
+      audioTopo.volume += 0.5;
+    }
   }
 }
 
@@ -125,13 +125,6 @@ function actualizarTemporizador() {
   document.getElementById("temporizador").innerText = tiempoRestante + "s";
 }
 
-/*function reiniciarJuego(){
-        tiempoRestante = 60;
-        puntuacion = 0;
-        puntuacionActual = 0;
-        document.getElementById("puntuacion").innerText = puntuacion;
-    }*/
-
 function iniciarTemporizador() {
   var temporizador = setInterval(function () {
     tiempoRestante--;
@@ -141,7 +134,6 @@ function iniciarTemporizador() {
       clearInterval(temporizador);
       alert("¡Tiempo agotado!");
       document.getElementById("boton").disabled = false;
-      //reiniciarJuego();
     }
   }, 1000);
 }
