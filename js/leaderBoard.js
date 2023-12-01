@@ -1,4 +1,4 @@
-window.addEventListener('load',function (){
+window.addEventListener('load', function () {
   audio = document.getElementById('audio');
   audio.play();
 });
@@ -7,6 +7,10 @@ var jugadores = JSON.parse(localStorage.getItem("Jugador"));
 
 function agregarJugadoresEnCajas() {
   if (jugadores) {
+    jugadores.sort(function (jugadorActual, siguienteJugador) {
+      return siguienteJugador.puntuacion - jugadorActual.puntuacion;
+    });
+    
     jugadores.forEach(function (jugador) {
       var jugadorElemento = document.createElement("div");
       jugadorElemento.id = 'jugador';
@@ -32,4 +36,5 @@ function agregarJugadoresEnCajas() {
     });
   }
 }
+
 agregarJugadoresEnCajas();

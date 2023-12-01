@@ -1,5 +1,7 @@
 var agujeros;
 var elemento;
+var mensaje;
+
 window.onload = function () {
   audio = document.getElementById("audio");
   audio.play();
@@ -13,11 +15,15 @@ window.onload = function () {
 };
 
 var puntuacion = 0;
-var tiempoRestante = 60;
+var tiempoRestante = 3;
 var puntuacionActual = 0;
 var punto = 0;
 
 function jugar() {
+  mensaje = document.getElementById('tiempo');
+  if (mensaje.style.visibility == 'visible') {
+    mensaje.style.visibility = 'hidden';
+  }
   iniciarTemporizador();
   document.getElementById("boton").disabled = true;
   var tiempoRandom = Math.round(Math.random() * (1300 - 1100) + 1100);
@@ -32,8 +38,8 @@ function jugar() {
 
     if (tiempoRestante <= 0) {
       clearInterval(intervalo);
-      alert("¡Tiempo agotado!");
       document.getElementById("boton").disabled = false;
+      document.getElementById("boton").style.display='none';
       elemento.removeEventListener("click", sumarPuntuacion);
       var puntuacionFinal = puntuacion;
       puntuacion = 0;
@@ -44,6 +50,7 @@ function jugar() {
         puntuacion: puntuacionFinal,
       };
       guardarPuntuacion(usuario);
+      document.getElementById("reiniciar").style.visibility = "visible";
     }
   }, tiempoRandom);
 }
@@ -119,7 +126,8 @@ function iniciarTemporizador() {
 
     if (tiempoRestante <= 0) {
       clearInterval(temporizador);
-      alert("¡Tiempo agotado!");
+      mensaje = document.getElementById('tiempo');
+      mensaje.style.visibility = 'visible';
       document.getElementById("boton").disabled = false;
     }
   }, 1000);

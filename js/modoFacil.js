@@ -1,6 +1,7 @@
 var agujeros;
 var topo;
 var acabado;
+var mensaje;
 window.onload = function () {
   audio = document.getElementById("audio");
   audio.play();
@@ -21,6 +22,10 @@ var tiempoRestante = 60;
 var puntuacionActual = 0;
 
 function jugar() {
+  mensaje = document.getElementById('tiempo');
+  if (mensaje.style.visibility == 'visible') {
+    mensaje.style.visibility = 'hidden';
+  }
   iniciarTemporizador();
   document.getElementById("boton").disabled = true;
   var tiempoRandom = Math.round(Math.random() * (1500 - 1300) + 1300);
@@ -35,8 +40,8 @@ function jugar() {
 
     if (tiempoRestante <= 0) {
       clearInterval(intervalo);
-      alert("¡Tiempo agotado!");
       document.getElementById("boton").disabled = false;
+      document.getElementById("boton").style.display='none';
       //deshabilitamos el click en los topos, reiniciamos la puntuación y guardamos en localStorage
       topo.removeEventListener("click", sumarPuntuacion);
       var puntuacionFinal = puntuacion;
@@ -90,7 +95,8 @@ function iniciarTemporizador() {
 
     if (tiempoRestante <= 0) {
       clearInterval(temporizador);
-      alert("¡Tiempo agotado!");
+      mensaje = document.getElementById('tiempo');
+      mensaje.style.visibility = 'visible';
       document.getElementById("boton").disabled = false;
     }
   }, 1000);
