@@ -15,7 +15,7 @@ window.onload = function () {
 };
 
 var puntuacion = 0;
-var tiempoRestante = 3;
+var tiempoRestante = 60;
 var puntuacionActual = 0;
 var punto = 0;
 
